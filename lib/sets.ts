@@ -14,7 +14,7 @@ export function subtractObj(a: Obj, b: Obj, partialPath = ""): MetaDiff {
       diff[key] = a[key];
       paths.push(path);
     } else if (isObj(pA) && isObj(pB)) {
-      // Reccursion
+      // Recursion
       const [nestDiff, nestPaths] = subtractObj(pA, pB, path + ".");
 
       if (hasValues(nestDiff)) {
@@ -44,11 +44,4 @@ export function addSet<T>(a: Set<T>, b: Set<T>): Set<T> {
 
 export function subtractSet<T>(a: Set<T>, b: Set<T>): Set<T> {
   return new Set([...a].filter((v) => !b.has(v)));
-}
-
-export function symSubstrSet<T>(a: Set<T>, b: Set<T>): Set<T> {
-  const intersection = intersectSet(a, b);
-  const union = addSet(a, b);
-
-  return subtractSet(union, intersection);
 }

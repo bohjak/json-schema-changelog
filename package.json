@@ -1,0 +1,15 @@
+{
+  "name": "json-schema-changelog",
+  "version": "0.1.0",
+  "description": "A simple library for comparing two JSON schemas",
+  "main": "dist/index.js",
+  "repository": "https://github.com/jamesbohacek/json-chema-changelog",
+  "author": "jamesbohacek <jamesbohacek@outlook.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "esbuild": "^0.11.23"
+  },
+  "scripts": {
+    "build": "node build.js"
+  }
+}

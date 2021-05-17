@@ -1,15 +1,18 @@
 {
   "name": "json-schema-changelog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple library for comparing two JSON schemas",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/jamesbohacek/json-chema-changelog",
   "author": "jamesbohacek <jamesbohacek@outlook.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "esbuild": "^0.11.23"
+    "esbuild": "^0.11.23",
+    "typescript": "^4.2.4"
   },
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "postbuild": "tsc --project tsconfig.json"
   }
 }

@@ -3,8 +3,8 @@ import {
   Diff,
   DiffMap,
   DiffType,
+  getPropName,
   intersectSet,
-  last,
   MetaDiff,
   Obj,
   subtractObj,
@@ -15,7 +15,7 @@ export function createDiffMap(
   addObj: Obj,
   remObj: Obj,
   type: DiffType,
-  paths: Set<string>,
+  paths: Set<string>
 ): DiffMap {
   const diffMap: DiffMap = new Map();
 
@@ -25,8 +25,7 @@ export function createDiffMap(
     const before = deepDot(remObj, pathArr);
     const after = deepDot(addObj, pathArr);
 
-    // TODO: make clever
-    const propName = pathArr[1] ?? last(pathArr);
+    const propName = getPropName(pathArr);
 
     diffMap.set(propPath, {
       type,
@@ -42,10 +41,7 @@ export function createDiffMap(
   return diffMap;
 }
 
-export function createDiffMaps(
-  addDiff: MetaDiff,
-  remDiff: MetaDiff,
-): Diff {
+export function createDiffMaps(addDiff: MetaDiff, remDiff: MetaDiff): Diff {
   const [addObj, addPaths] = addDiff;
   const [remObj, remPaths] = remDiff;
 
@@ -57,13 +53,13 @@ export function createDiffMaps(
     addObj,
     remObj,
     DiffType.ADDITION,
-    pureAddPaths,
+    pureAddPaths
   );
   const removals = createDiffMap(
     addObj,
     remObj,
     DiffType.REMOVAL,
-    pureRemPaths,
+    pureRemPaths
   );
   const changes = createDiffMap(addObj, remObj, DiffType.CHANGE, changePaths);
 

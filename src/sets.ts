@@ -38,10 +38,6 @@ export function intersectSet<T>(a: Set<T>, b: Set<T>): Set<T> {
   return new Set([...a].filter((v) => b.has(v)));
 }
 
-export function addSet<T>(a: Set<T>, b: Set<T>): Set<T> {
-  return new Set([...a, ...b]);
-}
-
 export function subtractSet<T>(a: Set<T>, b: Set<T>): Set<T> {
   return new Set([...a].filter((v) => !b.has(v)));
 }

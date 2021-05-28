@@ -2,11 +2,18 @@
   "name": "json-schema-changelog",
   "version": "0.1.2",
   "description": "A simple library for comparing two JSON schemas",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/jamesbohacek/json-chema-changelog",
   "author": "jamesbohacek <jamesbohacek@outlook.com>",
   "license": "Apache-2.0",
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "json",
+    "difference"
+  ],
   "devDependencies": {
     "esbuild": "^0.11.23",
     "typescript": "^4.2.4"

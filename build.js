@@ -1,9 +1,9 @@
-require('esbuild').build({
-  entryPoints: ['lib/index.ts'],
+require("esbuild").build({
+  entryPoints: ["src/index.ts"],
   bundle: true,
   minify: true,
   sourcemap: true,
-  outdir: 'dist',
-  platform: 'node',
-  target: 'node14'
-})
+  outdir: "lib",
+  platform: "node",
+  target: "node14",
+});

@@ -26,5 +26,8 @@
     "build": "node build.js",
     "postbuild": "tsc --project tsconfig.json",
     "test": "jest"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
